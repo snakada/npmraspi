@@ -7,7 +7,7 @@ const YELLOW = new gpio.DigitalOutput('GPIO21');
 
 /**
  * LED点滅のパターンを指定して実行します。
- * @param {number} output DigitalOutputインスタンス 
+ * @param {object} output gpio.DigitalOutput
  * @param {number} times 点滅回数
  * @param {number} interval 点滅間隔(ミリ秒)
  */
@@ -28,7 +28,6 @@ raspi.init(() => {
   while(true) {
     chika(GREEN, 3, 500);
     chika(YELLOW, 3, 500);
-
     sleep.msleep(2000);
 
     chika(GREEN, 5, 200);
